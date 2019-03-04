@@ -1,5 +1,8 @@
+export const EVENTS = {
 
-//export const TYPE_EVENT = {
+};
+
+export const TYPE_EVENT = {
     //'1': 'gostin',
     //'2': 'kuhnya',
     //'3': 'spalnya',
@@ -37,7 +40,7 @@
     // '26': 'all_light_off',
     // '27': 'elect_on',
     // '28': 'normal_warm',
-//};
+};
 
 export const EVENTS_VARIANTS = {
     //gostin: 'on/off', // Свет в гостинной
