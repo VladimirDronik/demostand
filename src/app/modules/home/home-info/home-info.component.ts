@@ -121,6 +121,13 @@ export class HomeInfoComponent implements OnInit {
             off: 'Все розетки выключены',
             img_on: 'rozetka.png',
             img_off: 'rozetka.png'
+        },
+        vanna: {
+            status: false,
+            on: 'Свет в ванной включен',
+            off: 'Свет в ванной выключен',
+            img_on: 'vanna.png',
+            img_off: 'vanna.png'
         }
     };
 
