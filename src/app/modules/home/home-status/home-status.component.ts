@@ -91,7 +91,7 @@ export class HomeStatusComponent implements OnInit {
         this.wsService.onMessage.subscribe((
             data: any) => {
             if (!data) return
-            this.prepareStatus(data.status);
+            this.prepareStatus(data.statusmessage);
         });
     }
 
