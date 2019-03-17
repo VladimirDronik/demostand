@@ -11,8 +11,8 @@ export class WebsocketService {
   //  defaultServerUrl = '188.120.233.76:8000'; //Remote server for test
   //  defaultServerUrl = '172.16.100.200:8000'; // Real local server
   //  defaultServerUrl = '178.57.106.214:8000'; // Real local server with remote access  
-     defaultServerUrl = 'localhost:8000'; //localhost for test
-  // defaultServerUrl = '188.120.233.76:8000'; //localhost for test
+  //    defaultServerUrl = 'localhost:8000'; //localhost for test
+  defaultServerUrl = '188.120.233.76:8000'; //localhost for test
   serverUrl;
 
   roomsArr: Array<any>;
@@ -52,7 +52,7 @@ export class WebsocketService {
 
   constructor(private http: HttpClient) {
     // this.userId = localStorage.getItem('userId');
-    this.userId = 'tester0192';
+    this.userId = 'demostand';
     this.serverUrl = localStorage.getItem('serverUrl');
 
     if (!this.userId) {
@@ -109,7 +109,9 @@ export class WebsocketService {
     this.socketGet.onopen = () => {
       this.socketGet.onmessage = (event) => {
         const data = JSON.parse(event.data);
-        this.onMessage.next(data);
+        if ( data.events || data.info || data.statusmessage) {
+          this.onMessage.next(data);
+        }
       };
     };
     this.socketGet.onerror = (event) => {
